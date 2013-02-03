@@ -2,9 +2,12 @@
 <html>
   <head>
     <title>Japanese Name Converter</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+
     <link href="lib/bootstrap/css/bootstrap.min.css" rel="stylesheet" media="screen"/>
     <link href="css/application.css" rel="stylesheet"/>
     <link href="lib/bootstrap/css/bootstrap-responsive.min.css" rel="stylesheet" media="screen"/>
+    <link href="css/flags.css" rel="stylesheet"/>
     
     <!-- HTML5 shim, for IE6-8 support of HTML5 elements -->
     <!--[if lt IE 9]>
@@ -39,33 +42,51 @@
         <div class="span3">
           <div class="well sidebar-nav">
             <ul class="nav nav-list">
-              <li class="nav-header">Sidebar</li>
-              <li class="active"><a href="#">Link</a></li>
-              <li><a href="#">Link</a></li>
-              <li><a href="#">Link</a></li>
-              <li><a href="#">Link</a></li>
-              <li class="nav-header">Sidebar</li>
-              <li><a href="#">Link</a></li>
-              <li><a href="#">Link</a></li>
-              <li><a href="#">Link</a></li>
-              <li><a href="#">Link</a></li>
-              <li><a href="#">Link</a></li>
-              <li><a href="#">Link</a></li>
-              <li class="nav-header">Sidebar</li>
-              <li><a href="#">Link</a></li>
-              <li><a href="#">Link</a></li>
-              <li><a href="#">Link</a></li>
+              <li class="nav-header">Popular searches</li>
+              <li><a href="#nancy">Nancy</a></li>
+              <li><a href="#nolan">Nolan</a></li>
+              <li><a href="#karen">Karen</a></li>
+              <li><a href="#adam">Adam</a></li>
+              <li><a href="#jimmy">Jimmy</a></li>
+              <li class="nav-header">Recently searched</li>
+              <li><a href="#nancy">Nancy</a></li>
+              <li><a href="#nolan">Nolan</a></li>
+              <li><a href="#karen">Karen</a></li>
+              <li><a href="#adam">Adam</a></li>
+              <li><a href="#jimmy">Jimmy</a></li>
             </ul>
           </div><!--/.well -->
         </div><!--/span-->
         <div class="span9 tab-content tab-home">
-          <div class="hero-unit">
-            <h1>Hello, world!</h1>
-            <p>This is a template for a simple marketing or informational website. It includes a large callout called the hero unit and three supporting pieces of content. Use it as a starting point to create something more unique.</p>
-            <p><a class="btn btn-primary btn-large">Learn more &raquo;</a></p>
+			<div class="span5 offset3" style="text-align:right;position:absolute;">
+				<h2 class="muted">日本語でのあなたの名前</h2>   
+				<p class="muted">最初に、英語の名前を入力しなさい。</p>
+			</div>
+          <div class="hero-unit">	
+			    
+			<h1>Your name in Japanese</h1>
+			
+			<p>To get started, enter your name in English.</p>
+			
+			<div class="span3 offset4 well well-small" style="text-align:center">
+				<div class="flag flag-gb" style="display:inline-block"></div>
+				/
+				<div class="flag flag-us" style="display:inline-block"></div>
+				→
+				<div class="flag flag-jp" style="display:inline-block"></div>
+			</div>
+
           </div>
           <div class="row-fluid">
-            <div class="span9 pull-center"><h1>I span 9! Woot! And here I go and here I go and here I go and here I go.</h1></div>
+            <div class="span6 offset3">
+				<div class="pull-center">
+            		<input type="text" data-provide="typeahead" style="margin-top: auto;margin-bottom: auto;">
+					<button class="btn btn-primary" type="button" style="margin-left:10px">
+						<i class="icon-arrow-right icon-white"></i>
+						<span>Convert!</span>
+					</button>
+				</div>
+            </div>
           </div><!--/row-->
         </div><!--/span-->
         <div class="span9 tab-content tab-faqs">
