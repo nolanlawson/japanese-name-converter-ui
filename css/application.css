@@ -1,0 +1,15 @@
+body {
+    padding-top: 60px;
+    padding-bottom: 40px;
+}
+
+.sidebar-nav {
+    padding: 9px 0;
+}
+
+/** implementing this myself because the bootstrap guys won't, for some boring philosophical reason probably.  */
+.pull-center {
+    margin     : 0 auto;
+    width      : 100% !important;
+    text-align : center;
+}
