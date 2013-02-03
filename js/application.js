@@ -12,6 +12,12 @@ $(function() {
 
     }
     
+    function setUpTooltips() {
+        $('a[title]').each(function(){
+            $(this).tooltip();
+        });
+    }
+    
     $(window).on('hashchange', function(e) {
         $('.nav li').removeClass('active');
         $('.nav li a[href="' + window.location.hash + '"]').parent().addClass('active');
@@ -27,5 +33,6 @@ $(function() {
     }).trigger('hashchange');
     
     setUpTabs();
+    setUpTooltips();
     
 });
