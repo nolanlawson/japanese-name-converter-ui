@@ -39,7 +39,7 @@
 
     <div class="container-fluid">
       <div class="row-fluid">
-        <div class="span3">
+        <div class="span3 hidden-phone">
           <div class="well sidebar-nav">
             <ul class="nav nav-list">
               <li class="nav-header">Popular searches</li>
@@ -58,32 +58,28 @@
           </div><!--/.well -->
         </div><!--/span-->
         <div class="span9 tab-content tab-home">
-			<div class="span5 offset3" style="text-align:right;position:absolute;">
-				<h2 class="muted">日本語でのあなたの名前</h2>   
-				<p class="muted">最初に、英語の名前を入力しなさい。</p>
-			</div>
-          <div class="hero-unit">	
-			    
+          <div class="hero-unit">		    
+			
 			<h1>Your name in Japanese</h1>
 			
 			<p>To get started, enter your name in English.</p>
+			<h3 class="muted" style="text-align:right">日本語でのあなたの名前</h2>   
+			<p class="muted" style="text-align:right">最初に、英語の名前を入力しなさい。</p>
 			
-			<div class="span3 offset4 well well-small" style="text-align:center">
-				<div class="flag flag-gb" style="display:inline-block"></div>
-				/
-				<div class="flag flag-us" style="display:inline-block"></div>
-				→
-				<div class="flag flag-jp" style="display:inline-block"></div>
-			</div>
+
 
           </div>
           <div class="row-fluid">
             <div class="span6 offset3">
 				<div class="pull-center">
+					
             		<input type="text" data-provide="typeahead" style="margin-top: auto;margin-bottom: auto;">
-					<button class="btn btn-primary" type="button" style="margin-left:10px">
+					<button class="btn btn-large btn-primary" type="button" style="margin-left:10px">
+						<div class="flag flag-english" style="display:inline-block"></div>
 						<i class="icon-arrow-right icon-white"></i>
-						<span>Convert!</span>
+						<div class="flag flag-jp" style="display:inline-block"></div>
+						
+						<span style="margin-left:10px">Convert!</span>
 					</button>
 				</div>
             </div>
