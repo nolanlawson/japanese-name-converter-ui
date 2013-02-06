@@ -8,18 +8,12 @@ $(function() {
         }).click(function(e){
             e.preventDefault()
         });
-        
-        // internal links
-        $('a:urlInternal').click(function(e) {
-            e.preventDefault(); // no page reload
-            $.bbq.pushState({}, 2);
-        });
     }
     
     function hashchange() {
         var tabname = $.param.fragment() || 'home';
         
-        var tabLinkSelector = tabname == 'home' ? 'a[href="./"]' : 'a[href="#' + tabname + '"]';
+        var tabLinkSelector = 'a[href="#' + tabname + '"]';
         var tabContentSelector = '.tab-' + tabname;
         
         $('.nav li').removeClass('active')
