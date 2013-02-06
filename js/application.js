@@ -1,38 +1,36 @@
 $(function() {
-
-    function setUpTabs() {
-
-        var navLinks = $('.nav a');
-
-        navLinks.click(function(e) {
-            e.preventDefault();
-
-            jQuery.bbq.pushState($(this).attr('href'));
-        });
-
-    }
     
-    function setUpTooltips() {
+    function setUpLinks() {
+        
+        // tooltip links
         $('a[title]').each(function(){
             $(this).tooltip();
+        }).click(function(e){
+            e.preventDefault()
+        });
+        
+        // internal links
+        $('a:urlInternal').click(function(e) {
+            e.preventDefault(); // no page reload
+            $.bbq.pushState({}, 2);
         });
     }
     
-    $(window).on('hashchange', function(e) {
-        $('.nav li').removeClass('active');
-        $('.nav li a[href="' + window.location.hash + '"]').parent().addClass('active');
+    function hashchange() {
+        var tabname = $.param.fragment() || 'home';
         
-        // switch tabs
-        var tabname = window.location.hash || '#home';
-        tabname = tabname.replace(/#/,'');
+        var tabLinkSelector = tabname == 'home' ? 'a[href="./"]' : 'a[href="#' + tabname + '"]';
+        var tabContentSelector = '.tab-' + tabname;
         
-        $('.tab-content:not(.tab-'+tabname+')').hide();
-        $('.tab-content.tab-'+tabname).show();
+        $('.nav li').removeClass('active')
+            .find(tabLinkSelector)
+            .parent().addClass('active');
         
-        
-    }).trigger('hashchange');
+        $('.tab-content').hide().filter(tabContentSelector).show();
+    }
     
-    setUpTabs();
-    setUpTooltips();
+    $(window).hashchange(hashchange).hashchange();
+    
+    setUpLinks();
     
 });
