@@ -8,6 +8,12 @@ $(function() {
         }).click(function(e){
             e.preventDefault()
         });
+        
+        // internal links
+        $('a:urlInternal').click(function(e) {
+            e.preventDefault(); // no page reload
+            $.bbq.pushState({}, 2);
+        });
     }
     
     function hashchange() {
