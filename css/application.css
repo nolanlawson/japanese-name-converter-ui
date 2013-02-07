@@ -14,31 +14,39 @@ body {
     text-align : center;
 }
 
+.jumbotron.subhead h1 {
+
+    font-family  : 'Joti One', cursive;
+    font-weight  : normal;
+}
+
 .jumbotron.subhead {
+
     margin-bottom: 20px;
     
     background-repeat:no-repeat;
-    background-image:url('../images/lantern-1200w.png');
+    background-image:url('../images/lantern-1200w.jpg');
+    background-position:top;
     
 }
     /* Huge desktop */
     @media (min-width: 1600px) { .jumbotron.subhead {
-                background-image:url('../images/lantern-2000w.png');
+                background-image:url('../images/lantern-2000w.jpg');
                  }}
                      
     /* Large desktop */
     @media (min-width: 1200px) and (max-width: 1599px) { .jumbotron.subhead {
-                background-image:url('../images/lantern-1600w.png');
+                background-image:url('../images/lantern-1600w.jpg');
                  }}
  
     /* Portrait tablet to landscape and desktop */
-    @media (min-width: 768px) and (max-width: 979px) { .jumbotron.subhead {background-image:url('../images/lantern-1000w.png'); }}
+    @media (min-width: 768px) and (max-width: 979px) { .jumbotron.subhead {background-image:url('../images/lantern-1000w.jpg'); }}
  
     /* Landscape phone to portrait tablet */
-    @media (max-width: 767px) { .jumbotron.subhead {background-image:url('../images/lantern-767w.png'); }}
+    @media (max-width: 767px) { .jumbotron.subhead {background-image:url('../images/lantern-767w.jpg'); }}
  
     /* Landscape phones and down */
-    @media (max-width: 480px) { .jumbotron.subhead {background-image:url('../images/lantern-480w.png'); }}
+    @media (max-width: 480px) { .jumbotron.subhead {background-image:url('../images/lantern-480w.jpg'); }}
 
 
 
