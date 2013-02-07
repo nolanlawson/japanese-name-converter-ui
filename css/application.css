@@ -13,3 +13,32 @@ body {
     width      : 100% !important;
     text-align : center;
 }
+
+.jumbotron.subhead {
+    margin-bottom: 20px;
+    
+    background-repeat:no-repeat;
+    background-image:url('../images/lantern-1200w.png');
+    
+}
+    /* Huge desktop */
+    @media (min-width: 1600px) { .jumbotron.subhead {
+                background-image:url('../images/lantern-2000w.png');
+                 }}
+                     
+    /* Large desktop */
+    @media (min-width: 1200px) and (max-width: 1599px) { .jumbotron.subhead {
+                background-image:url('../images/lantern-1600w.png');
+                 }}
+ 
+    /* Portrait tablet to landscape and desktop */
+    @media (min-width: 768px) and (max-width: 979px) { .jumbotron.subhead {background-image:url('../images/lantern-1000w.png'); }}
+ 
+    /* Landscape phone to portrait tablet */
+    @media (max-width: 767px) { .jumbotron.subhead {background-image:url('../images/lantern-767w.png'); }}
+ 
+    /* Landscape phones and down */
+    @media (max-width: 480px) { .jumbotron.subhead {background-image:url('../images/lantern-480w.png'); }}
+
+
+
