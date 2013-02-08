@@ -19,7 +19,13 @@ body {
     font-family  : 'Joti One', cursive;
     font-weight  : normal;
 }
-
+.btn-large [class^="icon-"], .btn-large [class*=" icon-"] {
+margin-top : 8px;
+}
+.btn {
+font-family  : 'Joti One', cursive;
+font-size    : 1.5em;
+}
 .jumbotron.subhead {
 
     margin-bottom: 20px;
