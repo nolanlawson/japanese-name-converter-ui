@@ -44,7 +44,7 @@
 <header class="jumbotron subhead" id="overview">
   <div class="container">
     <h1>Japanese Name Converter</h1>
-    <p class="lead">Transliterate your name into Japanese.</p>
+    <p class="lead">Transliterate your name into Japanese</p>
   </div>
 </header>
 
@@ -95,7 +95,16 @@
         </div><!--/span-->
         <div class="span9 tab-content tab-faqs">
           <div class="row-fluid">
-            <div class="span9 pull-center">This is some boring "FAQs" text.</div>
+            <div class="span9">
+                <h2>FAQs</h2>
+                <div class="well well-small">How does it work?</div>
+                <p>The Japanese Name Converter uses a combination of simple rules and artificial intelligence to transliterate English characters into the Japanese syllabic characters used for non-Japanese names (called katakana).  </p></p>For common English names, a simple dictionary lookup is used. For unknown names, I use a variation on the Transformation-Based Learner (TBL) originally invented by Eric Brill.  </p><p>Basically, given a list of English/Japanese name pairs, the TBL system learns a series of "rules" to apply in order to get the right output.  For instance, the first rule learned is to transform all <em>l</em>'s into <em>r</em>'s, because there is no <em>l</em>/<em>r</em> distinction in Japanese.  </p><p><a href='http://nolanlawson.com/2011/03/30/jnameconverter/' target='_blank'>This blog post</a> gives more details, for those interested in a technical answer.</p>
+               <div class="well well-small">Hey, doofus, you messed up my name!  My name's Daenerys Targaryen, and your system got the last vowel wrong!</div>    
+               <p>Congratulations, you took high-school Japanese.  This web site was not designed for you.</p>
+               <p>The rule-based classifier sometimes makes mistakes.  In my own tests, it had an accuracy of about 95% (on a per-character basic), but your mileage may vary.  In any case, always check with a Japanese friend before getting an ill-advised tattoo based on this web site. (And check with your Mom too.)</p>
+               <p>Transliteration is not easy, especially when you're dealing with a language as orthographically mangled as English.  The vowel system is very irregular, and furthermore, many names are ambiguous (is "Jaime" pronounced "JAY-mee" or "HIGH-may"?).  Don't expect perfect results, and you won't be disappointed.</p>   
+                 
+            </div>
           </div><!--/row-->
         </div><!--/span-->   
         <div class="span9 tab-content tab-android-app">
