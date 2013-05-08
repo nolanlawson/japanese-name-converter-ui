@@ -44,7 +44,7 @@
 <header class="jumbotron subhead" id="overview">
   <div class="container">
     <h1>Japanese Name Converter</h1>
-    <p class="lead">Transliterate your name into Japanese</p>
+    <p class="lead">Your name in Japanese katakana.</p>
   </div>
 </header>
 
@@ -97,12 +97,18 @@
           <div class="row-fluid">
             <div class="span9">
                 <h2>FAQs</h2>
-                <div class="well well-small">How does it work?</div>
-                <p>The Japanese Name Converter uses a combination of simple rules and artificial intelligence to transliterate English characters into the Japanese syllabic characters used for non-Japanese names (called katakana).  </p></p>For common English names, a simple dictionary lookup is used. For unknown names, I use a variation on the Transformation-Based Learner (TBL) originally invented by Eric Brill.  </p><p>Basically, given a list of English/Japanese name pairs, the TBL system learns a series of "rules" to apply in order to get the right output.  For instance, the first rule learned is to transform all <em>l</em>'s into <em>r</em>'s, because there is no <em>l</em>/<em>r</em> distinction in Japanese.  </p><p><a href='http://nolanlawson.com/2011/03/30/jnameconverter/' target='_blank'>This blog post</a> gives more details, for those interested in a technical answer.</p>
-               <div class="well well-small">Hey, doofus, you messed up my name!  My name's Daenerys Targaryen, and your system got the last vowel wrong!</div>    
+                <h4>How does it work?</h4>
+                <p>The Japanese Name Converter uses a combination of dictionary lookup, substitution rules, and machine learning to convert English characters into <a href='http://en.wikipedia.org/wiki/Katakana'>katakana</a>.  </p>
+				</p>For common English names, a dictionary lookup of about 1,300 English names is used.  For other names, a learned substitution model trained on these 1,300 names is applied instead.  This method is very similar to the <a href='http://en.wikipedia.org/wiki/Brill_tagger'>Transformation-Based Learner</a> (TBL) invented by Eric Brill.  </p>
+				<p>Essentially, given a list of English/Japanese name pairs, the system learns a series of substitution rules to apply to the English input in order to get the Japanese output.  For instance, the first rule the system learns is to replace the letter "L" with the letter "R", because there is no L/R distinction in Japanese. Later on. more subtle rules are applied, such as "replace G with J if it's followed by an E."  Here is the <a href='https://github.com/nolanlawson/JapaneseNameConverterRoot/blob/master/JapaneseNameConverter/assets/roomaji_model_20090128_pop1_3_3_min2_fewer_rules_hacked.txt'>full list of rules</a>.</p>
+				<p><a href='http://nolanlawson.com/2011/03/30/jnameconverter/' target='_blank'>This blog post</a> gives more details, for those interested in a complete answer.</p>
+               <h4>Hey, doofus, you messed up my name!  My name's Daenerys Targaryen, and your system got the last vowel wrong!</h4>    
                <p>Congratulations, you took high-school Japanese.  This web site was not designed for you.</p>
-               <p>The rule-based classifier sometimes makes mistakes.  In my own tests, it had an accuracy of about 95% (on a per-character basic), but your mileage may vary.  In any case, always check with a Japanese friend before getting an ill-advised tattoo based on this web site. (And check with your Mom too.)</p>
-               <p>Transliteration is not easy, especially when you're dealing with a language as orthographically mangled as English.  The vowel system is very irregular, and furthermore, many names are ambiguous (is "Jaime" pronounced "JAY-mee" or "HIGH-may"?).  Don't expect perfect results, and you won't be disappointed.</p>   
+               <p>The machine learning method sometimes makes mistakes.  In my own tests, it had an accuracy of about 95% on a per-character basic, but your mileage may vary.  In any case, always check with a Japanese friend before getting an ill-advised tattoo based on this web site. (And check with your Mom too.  Mom always knows best.)</p>
+               <p>In my defense, I can say that transliteration is not easy, especially when you're dealing with a language as orthographically mangled as English.  The vowel system is very irregular, and furthermore, many names are ambiguous.  For instance, is <em>Jaime</em> pronounced /'je&#618;mi:/ ("JAY-mee") or /'ha&#618;me&#618;/ ("HIGH-may")?</p>
+				<p>In any case, don't expect perfect results, and you won't be disappointed.</p>   
+               <h4>Your app fascinates me.  How can I contribute to this wonderful project?</h4>
+                <p>Now stop, you're going to make me blush.  The code is <a href='https://github.com/nolanlawson/JapaneseNameConverterRoot'>open-source on GitHub</a> and awaits your modifications.</p>
                  
             </div>
           </div><!--/row-->
