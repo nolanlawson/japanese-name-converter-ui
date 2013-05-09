@@ -4,7 +4,7 @@
     
     "use strict";
     
-    var serverUrl = 'http://localhost:8080/jnameconverter/convert';
+    var serverUrl = '/jnameconverter-server/convert';
     
     var $btnConvert = $('#btn-convert');
     var $inputConvert = $('#input-convert');
