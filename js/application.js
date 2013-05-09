@@ -41,7 +41,7 @@
             $ajaxLoaded.hide();
             $ajaxLoading.show();
             $btnConvert.addClass('disabled');
-            if (!$inputConvert.val()) {
+            if ($inputConvert.val() !== params.q) {
                 $inputConvert.val(params.q);
             }
             
@@ -86,13 +86,10 @@
             var q = $(this).val();
             $btnConvert.toggleClass('disabled', !q);
             
-            var code = e.which; // recommended to use e.which, it's normalized across browsers
-            if(code===13){
+            if(e.which === 13){
                 e.preventDefault();
-            }
-            if(code===32||code===13||code===188||code===186){
                 onFormSubmit();
-            } // missing closing if brace
+            }
             
         });
         $btnConvert.addClass('disabled').click(onFormSubmit);
