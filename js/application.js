@@ -13,13 +13,6 @@
     var $ajaxLoading = $('.ajax-loading');
     var $ajaxLoaded = $('.ajax-loaded');
         
-    function clearConvertedName() {
-        $divOutput.hide();
-        $divInstructions.show();
-        
-        $inputConvert.val(null);
-        $btnConvert.addClass('disabled');
-    }
     
     function showConvertedName(result) {
         
@@ -37,6 +30,8 @@
     }
     
     function convertName(params) {
+        $ajaxLoaded.show();
+        $ajaxLoading.hide();
         if (params && params.q) {
             $ajaxLoaded.hide();
             $ajaxLoading.show();
@@ -45,7 +40,6 @@
                 $inputConvert.val(params.q);
             }
             
-            setTimeout(function(){
             $.ajax({
                 url      : serverUrl,
                 dataType : 'json',
@@ -63,7 +57,13 @@
             fail(function() {
                 console.log("failed to reach " + serverUrl);
             });
-            }, 2000);
+        } else {
+            // clear the converted name
+            $divOutput.hide();
+            $divInstructions.show();
+
+            $inputConvert.val(null);
+            $btnConvert.addClass('disabled');
         }
     }
     
@@ -129,12 +129,7 @@
         
         $('.tab-content').hide().filter(tabContentSelector).show();
         
-        if (params) {
-            convertName(params);
-        } else {
-            clearConvertedName();
-        }
-        
+        convertName(params);
     }
     
     $(window).hashchange(hashchange).hashchange();
