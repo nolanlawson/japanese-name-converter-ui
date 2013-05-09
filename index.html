@@ -70,7 +70,7 @@
           </div><!--/.well -->
         </div><!--/span-->
         <div class="span9 tab-content tab-home">
-		  <div id="div-output" class="well well-large">	
+		  <div id="div-output" class="well well-large" style="display:none;">	
 		  </div>
           <div id="div-instructions" class="well well-large">		    
 			  
@@ -86,11 +86,12 @@
 					
             		<input id="input-convert" type="text" data-provide="typeahead" style="margin-top: auto;margin-bottom: auto;">
 					<button id="btn-convert" class="btn btn-inverse btn-large btn-primary" type="button" style="margin-left:10px" href='#'>
-						<i class="icon-foobar flag flag-english"></i>
-						<i class="icon-arrow-right icon-white"></i>
-						<i class="icon-foobar flag flag-jp"></i>
+						<i class="ajax-loaded icon-foobar flag flag-english"></i>
+						<i class="ajax-loaded icon-arrow-right icon-white"></i>
+						<i class="ajax-loaded icon-foobar flag flag-jp"></i>
+						<img class="ajax-loading" src="images/spinner.gif"/>
 						
-						<span style="margin-left:10px">Convert!</span>
+						<span class="ajax-loaded" style="margin-left:10px">Convert!</span>
 					</button>
 				</div>
             </div>

@@ -22,6 +22,9 @@ body {
 .btn-large [class^="icon-"], .btn-large [class*=" icon-"] {
 margin-top : 8px;
 }
+#btn-convert {
+    min-width:200px;
+}
 .btn {
 font-family  : 'Joti One', cursive;
 font-size    : 1.5em;

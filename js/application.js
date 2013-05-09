@@ -10,6 +10,8 @@
     var $inputConvert = $('#input-convert');
     var $divOutput = $('#div-output');
     var $divInstructions = $('#div-instructions');
+    var $ajaxLoading = $('.ajax-loading');
+    var $ajaxLoaded = $('.ajax-loaded');
         
     function clearConvertedName() {
         $divOutput.hide();
@@ -32,15 +34,18 @@
                     $('<span></span>').text(result.katakana)).
                 append($('<span></span>').addClass('muted').text(' (' + result.roomaji +')')));
         
-        if (!$inputConvert.val()) {
-            $inputConvert.val(result.q);
-            $btnConvert.removeClass('disabled');
-        }
-        
     }
     
     function convertName(params) {
         if (params && params.q) {
+            $ajaxLoaded.hide();
+            $ajaxLoading.show();
+            $btnConvert.addClass('disabled');
+            if (!$inputConvert.val()) {
+                $inputConvert.val(params.q);
+            }
+            
+            setTimeout(function(){
             $.ajax({
                 url      : serverUrl,
                 dataType : 'json',
@@ -48,6 +53,9 @@
                 
             }).
             done(function(result){
+                $ajaxLoaded.show();
+                $ajaxLoading.hide();
+                $btnConvert.removeClass('disabled');
                 if (!result.error) {
                     showConvertedName(result);
                 }
@@ -55,6 +63,7 @@
             fail(function() {
                 console.log("failed to reach " + serverUrl);
             });
+            }, 2000);
         }
     }
     
