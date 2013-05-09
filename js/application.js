@@ -6,6 +6,39 @@
     
     var serverUrl = 'http://localhost:8080/jnameconverter/convert';
     
+    var $btnConvert = $('#btn-convert');
+    var $inputConvert = $('#input-convert');
+    var $divOutput = $('#div-output');
+    var $divInstructions = $('#div-instructions');
+        
+    function clearConvertedName() {
+        $divOutput.hide();
+        $divInstructions.show();
+        
+        $inputConvert.val(null);
+        $btnConvert.addClass('disabled');
+    }
+    
+    function showConvertedName(result) {
+        
+        $divInstructions.hide();
+        
+        $divOutput.show().empty().
+            append(
+                $('<h4></h4>').text('The name "' + result.q + '" in Japanese is ')).
+            append(
+                $('<h3></h3>').css({'text-align' : 'center'}).
+                append(
+                    $('<span></span>').text(result.katakana)).
+                append($('<span></span>').addClass('muted').text(' (' + result.roomaji +')')));
+        
+        if (!$inputConvert.val()) {
+            $inputConvert.val(result.q);
+            $btnConvert.removeClass('disabled');
+        }
+        
+    }
+    
     function convertName(params) {
         if (params && params.q) {
             $.ajax({
@@ -15,7 +48,9 @@
                 
             }).
             done(function(result){
-                window.alert(JSON.stringify(result));
+                if (!result.error) {
+                    showConvertedName(result);
+                }
             }).
             fail(function() {
                 console.log("failed to reach " + serverUrl);
@@ -23,21 +58,35 @@
         }
     }
     
+    function onFormSubmit() {
+        var q = $inputConvert.val();
+        
+        if (q) {
+            
+            var hash = document.location.hash;
+            hash = hash.replace(/\?[^?]*$/,'');
+            hash = hash + '?' + $.param({q : q});
+            document.location.hash = hash;
+        }
+    }
+    
     function setUpConvertButton() {
-        $('#btn-convert').click(function(){
+        
+        $inputConvert.keyup(function(e){
             
-            // ask server to convert
-            var q = $('#input-convert').val();
+            var q = $(this).val();
+            $btnConvert.toggleClass('disabled', !q);
             
-            if (q) {
-                
-                var hash = document.location.hash;
-                hash = hash.replace(/\?[^?]*$/,'');
-                hash = hash + '?' + $.param({q : q});
-                document.location.hash = hash;
+            var code = e.which; // recommended to use e.which, it's normalized across browsers
+            if(code===13){
+                e.preventDefault();
             }
+            if(code===32||code===13||code===188||code===186){
+                onFormSubmit();
+            } // missing closing if brace
             
         });
+        $btnConvert.addClass('disabled').click(onFormSubmit);
     }
     
     function setUpLinks() {
@@ -76,6 +125,8 @@
         
         if (params) {
             convertName(params);
+        } else {
+            clearConvertedName();
         }
         
     }
