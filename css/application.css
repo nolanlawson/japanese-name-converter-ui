@@ -1,10 +1,10 @@
 body {
-    padding-top: 60px;
-    padding-bottom: 40px;
+padding-top: 60px;
+padding-bottom: 40px;
 }
 
 .sidebar-nav {
-    padding: 9px 0;
+padding: 9px 0;
 }
 
 /** implementing this myself because the bootstrap guys won't, for some boring philosophical reason probably.  */
@@ -23,39 +23,66 @@ body {
 margin-top : 8px;
 }
 #btn-convert {
-    min-width:200px;
+min-width: 200px;
 }
 .btn {
 font-family  : 'Joti One', cursive;
 font-size    : 1.5em;
 }
 .jumbotron.subhead {
-
-    margin-bottom: 20px;
-    
-    background-repeat:no-repeat;
-    background-image:url('../images/lantern-1200w.jpg');
-    background-position:top;
-    
+margin-bottom: 20px;
+background-repeat: no-repeat;
+background-image: url('../images/lantern-1200w.jpg');
+background-position: top;
 }
-    /* Huge desktop */
-    @media (min-width: 1600px) { .jumbotron.subhead {
-                background-image:url('../images/lantern-2000w.jpg');
-                 }}
+/* Huge desktop */
+@media (min-width: 1600px) {
+    
+    .jumbotron.subhead {
+background-image: url('../images/lantern-2000w.jpg');
+}
+
+}
                      
-    /* Large desktop */
-    @media (min-width: 1200px) and (max-width: 1599px) { .jumbotron.subhead {
-                background-image:url('../images/lantern-1600w.jpg');
-                 }}
+/* Large desktop */
+@media (min-width: 1200px) and (max-width: 1599px) {
+    
+    .jumbotron.subhead {
+    background-image: url('../images/lantern-1600w.jpg');
+    }
+
+}
  
-    /* Portrait tablet to landscape and desktop */
-    @media (min-width: 768px) and (max-width: 979px) { .jumbotron.subhead {background-image:url('../images/lantern-1000w.jpg'); }}
+/* Portrait tablet to landscape and desktop */
+@media (min-width: 768px) and (max-width: 979px) {
+    
+    .jumbotron.subhead {
+    background-image: url('../images/lantern-1000w.jpg');
+    }
+
+}
  
-    /* Landscape phone to portrait tablet */
-    @media (max-width: 767px) { .jumbotron.subhead {background-image:url('../images/lantern-767w.jpg'); }}
+/* Landscape phone to portrait tablet */
+@media (max-width: 767px) {
+    
+    .jumbotron.subhead {
+    background-image: url('../images/lantern-767w.jpg');
+    }
+
+}
  
-    /* Landscape phones and down */
-    @media (max-width: 480px) { .jumbotron.subhead {background-image:url('../images/lantern-480w.jpg'); }}
+/* Landscape phones and down */
+@media (max-width: 480px) {
+    
+    .jumbotron.subhead {
+    background-image: url('../images/lantern-480w.jpg');
+    }
+    
+    #btn-convert {
+        margin-top: 10px;
+    }
+
+}
 
 
 
