@@ -56,6 +56,9 @@
             }).
             fail(function() {
                 console.log("failed to reach " + serverUrl);
+                $ajaxLoaded.show();
+                $ajaxLoading.hide();
+                $btnConvert.removeClass('disabled');
             });
         } else {
             // clear the converted name
