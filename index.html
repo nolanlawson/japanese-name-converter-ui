@@ -147,13 +147,26 @@
 
     <!-- Le javascript
     ================================================== -->
-    <!-- Placed at the end of the document so the pages load faster -->
-    <script src="lib/jquery/jquery-1.9.0.min.js"></script>
-    <script src="lib/jquery-migrate/jquery-migrate-1.1.0.min.js"></script>      
+
+    <!-- CDN if possible, else local -->
+	<script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.0/jquery.min.js"></script>
+	<script>window.jQuery || document.write('<script src="lib/jquery/jquery-1.9.0.min.js">\x3C/script>')</script>
+	
+	<!-- CDN if possible, else local -->
+	<script src="//code.jquery.com/jquery-migrate-1.1.0.min.js"></script>
+	<script>window.jQuery.browser || document.write('<script src="lib/jquery-migrate/jquery-migrate-1.1.0.min.js">\x3C/script>')</script>
+	
+	<!-- CDN if possible, else local -->
+	<script src="//cdnjs.cloudflare.com/ajax/libs/jquery.ba-bbq/1.2.1/jquery.ba-bbq.min.js"></script>
+	<script>window.jQuery.bbq || document.write('<script src="lib/jquery-bbq/jquery.ba-bbq-1.2.1.min.js">\x3C/script>')</script>
+	
     <script src="lib/jquery-hashchange/jquery.ba-hashchange-1.3.min.js"></script>
-    <script src="lib/jquery-bbq/jquery.ba-bbq-1.2.1.min.js"></script>  
 	<script src="lib/jquery-urlinternal/jquery.ba-urlinternal-1.0.min.js"></script>
-    <script src="lib/bootstrap/js/bootstrap.min.js"></script>
+	
+	<!-- CDN if possible, else local -->
+	<script src="//netdna.bootstrapcdn.com/twitter-bootstrap/2.2.2/js/bootstrap.min.js"></script>
+	<script>window.jQuery.support && jQuery.support.transition || document.write('<script src="lib/bootstrap/js/bootstrap.min.js">\x3C/script>')</script>
+	
     <script src="js/application.js"></script>
 
   </body>
