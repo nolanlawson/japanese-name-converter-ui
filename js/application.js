@@ -1,7 +1,7 @@
 document.addEventListener('DOMContentLoaded', function() {
     "use strict";
 
-    var $ = document.querySelector.bind($)
+    var $ = document.querySelector.bind(document)
     var $$ = function (selector) {
         return Array.prototype.slice.apply(document.querySelectorAll(selector))
     }
@@ -29,28 +29,25 @@ document.addEventListener('DOMContentLoaded', function() {
 
     function showConvertedName(result) {
 
-        $divInstructions.hide();
+        $divInstructions.style.display = 'none'
 
-        $divOutput.show().empty().
-            append(
-                $('<h4></h4>').text('The name "' + result.q + '" in Japanese is ')).
-            append(
-                $('<h3></h3>').css({'text-align' : 'center'}).
-                append(
-                    $('<span></span>').text(result.katakana)).
-                append($('<span></span>').addClass('muted').text(' (' + result.roomaji +')')));
-
+        $divOutput.style.display = ''
+        $divOutput.innerHTML = '<h4>The name' + result.q + ' in Japanese is </h4>' +
+          '<h3 style="text-align: center">' +
+          '<span>' + result.katakana + '</span>' +
+          '<span class="muted">(' + result.roomaji + ')</span>' +
+          '</h3>'
     }
 
     function convertName(params) {
-        $ajaxLoaded.show();
-        $ajaxLoading.hide();
+        $ajaxLoaded.style.display = ''
+        $ajaxLoading.style.display = 'none'
         if (params && params.q) {
-            $ajaxLoaded.hide();
-            $ajaxLoading.show();
-            $btnConvert.addClass('disabled');
-            if ($inputConvert.val() !== params.q) {
-                $inputConvert.val(params.q);
+            $ajaxLoaded.style.display = 'none'
+            $ajaxLoading.style.display = ''
+            $btnConvert.classList.add('disabled');
+            if ($inputConvert.value !== params.q) {
+                $inputConvert.value = params.q;
             }
 
             fetch(serverUrl + new URLSearchParams(params).toString())
@@ -110,7 +107,7 @@ document.addEventListener('DOMContentLoaded', function() {
     function setUpLinks() {
 
         // tooltip links
-        $('a[title]').each(function(){
+        $$('a[title]').forEach(function(){
             $(this).tooltip();
         }).click(function(e){
             e.preventDefault();
@@ -140,20 +137,30 @@ document.addEventListener('DOMContentLoaded', function() {
         var tabLinkSelector = 'a[href="#' + tabname + '"]';
         var tabContentSelector = '.tab-' + tabname;
 
-        $('.nav li').classList.remove('active')
-            .find(tabLinkSelector)
-            .parent().addClass('active');
+        $$('.nav li').forEach(function (li) {
+            li.classList.remove('active')
+        })
 
-        $('.tab-content').hide().filter(tabContentSelector).show();
+        $$('.nav li ' + tabLinkSelector).forEach(function (link) {
+            link.parentElement.classList.add('active')
+        })
+
+        $$('.tab-content').forEach(function (content) {
+            content.style.display = 'none'
+        })
+
+        $$('.tabl-content' + tabContentSelector).forEach(function (content) {
+            content.style.display = ''
+        })
 
         convertName(params);
         // lazy-load the Android screenshot images
-        $(tabContentSelector).find('img[data-src]').each(function (i, el) {
-            $(el).attr('src', $(el).attr('data-src'));
+        $$(tabContentSelector + ' img[data-src]').forEach(function (el) {
+            el.setAttribute('src', el.getAttribute('data-src'))
         });
     }
 
-    $(window).hashchange(hashchange).hashchange();
+    window.addEventListener('hashchange', hashchange)
 
     setUpLinks();
     setUpConvertButton();
