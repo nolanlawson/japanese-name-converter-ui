@@ -4,7 +4,7 @@
     
     "use strict";
     
-    var serverUrl = '/jnameconverter-server/convert';
+    var serverUrl = 'https://hoee1jqqr7.execute-api.us-west-2.amazonaws.com/JNameConverter';
     
     var $btnConvert = $('#btn-convert');
     var $inputConvert = $('#input-convert');
@@ -14,13 +14,13 @@
     var $ajaxLoaded = $('.ajax-loaded');
         
     
-    function showConvertedName(result) {
+    function showConvertedName(result, q) {
         
         $divInstructions.hide();
         
         $divOutput.show().empty().
             append(
-                $('<h4></h4>').text('The name "' + result.q + '" in Japanese is ')).
+                $('<h4></h4>').text('The name "' + q + '" in Japanese is ')).
             append(
                 $('<h3></h3>').css({'text-align' : 'center'}).
                 append(
@@ -51,7 +51,7 @@
                 $ajaxLoading.hide();
                 $btnConvert.removeClass('disabled');
                 if (!result.error) {
-                    showConvertedName(result);
+                    showConvertedName(result, params.q);
                 }
             }).
             fail(function() {
