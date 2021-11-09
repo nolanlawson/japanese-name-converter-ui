@@ -1,0 +1,25 @@
+{
+  "name": "japanese-name-converter-ui",
+  "version": "1.0.0",
+  "description": "Japanese Name Converter UI ==========================",
+  "scripts": {
+    "build": "parcel build ./src/index.html"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/nolanlawson/japanese-name-converter-ui.git"
+  },
+  "author": "",
+  "license": "Apache-2.0",
+  "bugs": {
+    "url": "https://github.com/nolanlawson/japanese-name-converter-ui/issues"
+  },
+  "homepage": "https://github.com/nolanlawson/japanese-name-converter-ui#readme",
+  "devDependencies": {
+    "parcel": "^2.0.1"
+  },
+  "volta": {
+    "node": "16.13.0",
+    "npm": "7.24.2"
+  }
+}

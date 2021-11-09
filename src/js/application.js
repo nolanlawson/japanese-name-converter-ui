@@ -133,10 +133,6 @@
         $('.tab-content').hide().filter(tabContentSelector).show();
         
         convertName(params);
-        // lazy-load the Android screenshot images
-        $(tabContentSelector).find('img[data-src]').each(function (i, el) {
-            $(el).attr('src', $(el).attr('data-src'));
-        });
     }
     
     $(window).hashchange(hashchange).hashchange();
