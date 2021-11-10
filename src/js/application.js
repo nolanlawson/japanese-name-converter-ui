@@ -146,5 +146,21 @@
     navbarButton.click(function () {
         var pressed = navbarButton.attr('aria-expanded');
         navbarButton.attr('aria-expanded', pressed === 'true' ? 'false' : 'true');
+        setTimeout(setAriaHiddenOnNav);
     });
+    var nav = $('#nav');
+    function setAriaHiddenOnNav() {
+        var isHidden = navCanHide && !nav.hasClass('in');
+        nav.attr('aria-hidden', isHidden ? 'true' : 'false');
+        nav.find('a').each(function (i, anchor) {
+            $(anchor).attr('tabIndex', isHidden ? '-1' : '0');
+        });
+    }
+    var matcher = window.matchMedia('(max-width: 979px)');
+    var navCanHide = matcher.matches;
+    matcher.addListener(function () {
+        navCanHide = matcher.matches;
+        setAriaHiddenOnNav();
+    });
+    setAriaHiddenOnNav();
 })(jQuery);
