@@ -4,7 +4,7 @@
   },
   "headers": [
     {
-      "source": "/(.*).(js|css|png|jpg|jpeg|svg|ico|map)",
+      "source": "/(.*\\.js)|(.*\\.css)|(.*\\.png)|(.*\\.jpg)|(.*\\.jpeg)|(.*\\.svg)|(.*\\.ico)|(.*\\.js\\.map)|(.*\\.css\\.map)$",
       "headers": [
         {
           "key": "cache-control",
