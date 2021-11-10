@@ -10,78 +10,6 @@
   ],
   "headers": [
     {
-      "source": "(.*)\\.js",
-      "headers": [
-        {
-          "key": "cache-control",
-          "value": "public,max-age=31536000,immutable"
-        }
-      ]
-    },
-    {
-      "source": "(.*)\\.css",
-      "headers": [
-        {
-          "key": "cache-control",
-          "value": "public,max-age=31536000,immutable"
-        }
-      ]
-    },
-    {
-      "source": "(.*)\\.map",
-      "headers": [
-        {
-          "key": "cache-control",
-          "value": "public,max-age=31536000,immutable"
-        }
-      ]
-    },
-    {
-      "source": "(.*)\\.png",
-      "headers": [
-        {
-          "key": "cache-control",
-          "value": "public,max-age=31536000,immutable"
-        }
-      ]
-    },
-    {
-      "source": "(.*)\\.jpg",
-      "headers": [
-        {
-          "key": "cache-control",
-          "value": "public,max-age=31536000,immutable"
-        }
-      ]
-    },
-    {
-      "source": "(.*)\\.jpeg",
-      "headers": [
-        {
-          "key": "cache-control",
-          "value": "public,max-age=31536000,immutable"
-        }
-      ]
-    },
-    {
-      "source": "(.*)\\.ico",
-      "headers": [
-        {
-          "key": "cache-control",
-          "value": "public,max-age=31536000,immutable"
-        }
-      ]
-    },
-    {
-      "source": "(.*)\\.gif",
-      "headers": [
-        {
-          "key": "cache-control",
-          "value": "public,max-age=31536000,immutable"
-        }
-      ]
-    },
-    {
       "source": "/(.*)",
       "headers": [
         {
@@ -102,7 +30,7 @@
         },
         {
           "key": "permissions-policy",
-          "value": "sync-xhr=(),document-domain=(),interest-cohort=()"
+          "value": "sync-xhr=(),document-domain=()"
         },
         {
           "key": "x-content-type-options",
@@ -123,6 +51,19 @@
         {
           "key": "cross-origin-opener-policy",
           "value": "same-origin"
+        }
+      ]
+    },
+    {
+      "source": "(.*)\\.(js|css|map|png|jpg|jpeg|ico|gif)$",
+      "headers": [
+        {
+          "key": "cache-control",
+          "value": "public,max-age=31536000,immutable"
+        },
+        {
+          "key": "x-nolan-cache-forever",
+          "value": "yes"
         }
       ]
     }
