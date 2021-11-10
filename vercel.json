@@ -10,7 +10,7 @@
   ],
   "headers": [
     {
-      "source": "(.*).(?:js|css|map|png|jpg|jpeg|ico|gif)",
+      "source": "(.*)\\.(js|css|map|png|jpg|jpeg|ico|gif)$",
       "headers": [
         {
           "key": "cache-control",
@@ -27,7 +27,7 @@
         },
         {
           "key": "content-security-policy",
-          "value": "default-src 'self';script-src 'self';worker-src 'self';style-src 'self' 'unsafe-inline' https://fonts.googleapis.com;img-src 'self' data:;media-src 'self' data:;connect-src 'self';frame-src 'none';frame-ancestors 'none';object-src 'none';manifest-src 'self';form-action 'self';base-uri 'self';font-src 'self' https://fonts.gstatic.com;"
+          "value": "default-src 'self';script-src 'self' https://fathom.nolanlawson.com;worker-src;style-src 'self' 'unsafe-inline' https://fonts.googleapis.com;img-src 'self' data:;media-src 'self' data:;connect-src 'self';frame-src 'none';frame-ancestors 'none';object-src 'none';manifest-src 'self';form-action 'self';base-uri 'self';font-src 'self' https://fonts.gstatic.com;"
         },
         {
           "key": "referrer-policy",
