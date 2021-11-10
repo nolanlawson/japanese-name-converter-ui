@@ -10,7 +10,24 @@
   ],
   "headers": [
     {
-      "source": "/(.*)",
+      "source": "/(.*)\\.(js|css|map|png|jpe?g|ico|gif)",
+      "headers": [
+        {
+          "key": "cache-control",
+          "value": "public,max-age=31536000,immutable"
+        },
+        {
+          "key": "x-nolan-cache-forever",
+          "value": "yes"
+        },
+        {
+          "key": "x-nolan-type",
+          "value": "immutable"
+        }
+      ]
+    },
+    {
+      "source": "/",
       "headers": [
         {
           "key": "content-security-policy",
@@ -51,39 +68,10 @@
         {
           "key": "x-nolan-csp",
           "value": "yes"
-        }
-      ]
-    },
-    {
-      "source": "/(.*)",
-      "has": [
-        {
-          "type": "header",
-          "key": "content-type",
-          "value": "text/html; charset=utf-8"
-        }
-      ],
-      "headers": [
-        {
-          "key": "cache-control",
-          "value": "public,max-age=14400"
         },
         {
-          "key": "x-nolan-is-html",
-          "value": "yes"
-        }
-      ]
-    },
-    {
-      "source": "(.*)\\.(js|css|map|png|jpg|jpeg|ico|gif)$",
-      "headers": [
-        {
-          "key": "cache-control",
-          "value": "public,max-age=31536000,immutable"
-        },
-        {
-          "key": "x-nolan-cache-forever",
-          "value": "yes"
+          "key": "x-nolan-type",
+          "value": "csp"
         }
       ]
     }
