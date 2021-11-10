@@ -4,7 +4,7 @@
   },
   "headers": [
     {
-      "source": "/(.*\\.js)|(.*\\.css)|(.*\\.png)|(.*\\.jpg)|(.*\\.jpeg)|(.*\\.svg)|(.*\\.ico)|(.*\\.js\\.map)|(.*\\.css\\.map)$",
+      "source": "/(.*\\.js)|(.*\\.css)|(.*\\.png)|(.*\\.jpg)|(.*\\.jpeg)|(.*\\.svg)|(.*\\.ico)|(.*\\.js\\.map)|(.*\\.css\\.map)|(.*\\.gif)$",
       "headers": [
         {
           "key": "cache-control",
@@ -21,7 +21,7 @@
         },
         {
           "key": "content-security-policy",
-          "value": "default-src 'self';script-src 'self';worker-src 'self';style-src 'self' https://fonts.googleapis.com;img-src 'self';media-src 'self';connect-src 'self';frame-src 'none';frame-ancestors 'none';object-src 'none';manifest-src 'self';form-action 'self';base-uri 'self';font-src 'self' https://fonts.gstatic.com;"
+          "value": "default-src 'self';script-src 'self';worker-src 'self';style-src 'self' https://fonts.googleapis.com;img-src 'self' data:;media-src 'self' data:;connect-src 'self';frame-src 'none';frame-ancestors 'none';object-src 'none';manifest-src 'self';form-action 'self';base-uri 'self';font-src 'self' https://fonts.gstatic.com;"
         },
         {
           "key": "referrer-policy",
