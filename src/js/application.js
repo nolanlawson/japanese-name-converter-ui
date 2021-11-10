@@ -139,5 +139,12 @@
     
     setUpLinks();
     setUpConvertButton();
-    
+
+    // accessibility fix for bootstrap nav button, following
+    // https://www.w3.org/TR/wai-aria-practices/examples/accordion/accordion.html
+    var navbarButton = $('.btn-navbar');
+    navbarButton.click(function () {
+        var pressed = navbarButton.attr('aria-expanded');
+        navbarButton.attr('aria-expanded', pressed === 'true' ? 'false' : 'true');
+    });
 })(jQuery);
