@@ -10,7 +10,7 @@
   ],
   "headers": [
     {
-      "source": "(.*).js",
+      "source": "(.*).(?:js|css|map|png|jpg|jpeg|ico|gif)",
       "headers": [
         {
           "key": "cache-control",
@@ -19,7 +19,7 @@
       ]
     },
     {
-      "source": "(.*).html",
+      "source": "/(.*)",
       "headers": [
         {
           "key": "cache-control",
