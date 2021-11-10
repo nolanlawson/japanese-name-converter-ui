@@ -4,7 +4,7 @@
   },
   "headers": [
     {
-      "source": "^/.*\\.(js|css|png|jpe?g|svg)$",
+      "source": "/(.*)\\.(js|css|png|jpe?g|svg))$",
       "headers": [
         {
           "key": "cache-control",
@@ -13,7 +13,7 @@
       ]
     },
     {
-      "source": "^/.*",
+      "source": "^/(.*)",
       "headers": [
         {
           "key": "cache-control",
