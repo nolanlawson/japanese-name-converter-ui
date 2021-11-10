@@ -10,7 +10,7 @@
   ],
   "headers": [
     {
-      "source": "(.*)\\.js$",
+      "source": "(.*)\\.js",
       "headers": [
         {
           "key": "cache-control",
@@ -19,7 +19,7 @@
       ]
     },
     {
-      "source": "(.*)\\.css$",
+      "source": "(.*)\\.css",
       "headers": [
         {
           "key": "cache-control",
@@ -28,7 +28,7 @@
       ]
     },
     {
-      "source": "(.*)\\.map$",
+      "source": "(.*)\\.map",
       "headers": [
         {
           "key": "cache-control",
@@ -37,7 +37,7 @@
       ]
     },
     {
-      "source": "(.*)\\.png$",
+      "source": "(.*)\\.png",
       "headers": [
         {
           "key": "cache-control",
@@ -46,7 +46,7 @@
       ]
     },
     {
-      "source": "(.*)\\.jpg$",
+      "source": "(.*)\\.jpg",
       "headers": [
         {
           "key": "cache-control",
@@ -55,7 +55,7 @@
       ]
     },
     {
-      "source": "(.*)\\.jpeg$",
+      "source": "(.*)\\.jpeg",
       "headers": [
         {
           "key": "cache-control",
@@ -64,7 +64,7 @@
       ]
     },
     {
-      "source": "(.*)\\.ico$",
+      "source": "(.*)\\.ico",
       "headers": [
         {
           "key": "cache-control",
@@ -73,7 +73,7 @@
       ]
     },
     {
-      "source": "(.*)\\.gif$",
+      "source": "(.*)\\.gif",
       "headers": [
         {
           "key": "cache-control",
