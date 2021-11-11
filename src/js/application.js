@@ -140,27 +140,44 @@
     setUpLinks();
     setUpConvertButton();
 
+    var navContainer = $('.navbar .container-fluid');
+    var navbarButton = $('.btn-navbar');
+    var nav = $('#nav');
+    var matcher = window.matchMedia('(max-width: 979px)');
+    var mobileSize = matcher.matches;
+
+    // accessibility fix for tab ordering, move stuff around so tabindex ordering is right
+    function setNavPlacementInDom () {
+        var isFirst = navContainer[0].firstElementChild === nav[0];
+        if (mobileSize && isFirst) { // move to last
+            nav.remove();
+            navContainer.append(nav);
+        } else if (!mobileSize && !isFirst) { // move to first
+            nav.remove();
+            navContainer.prepend(nav);
+        }
+    }
+
     // accessibility fix for bootstrap nav button, following
     // https://www.w3.org/TR/wai-aria-practices/examples/accordion/accordion.html
-    var navbarButton = $('.btn-navbar');
-    navbarButton.click(function () {
-        var pressed = navbarButton.attr('aria-expanded');
-        navbarButton.attr('aria-expanded', pressed === 'true' ? 'false' : 'true');
-        setTimeout(setAriaHiddenOnNav);
-    });
-    var nav = $('#nav');
     function setAriaHiddenOnNav() {
-        var isHidden = navCanHide && !nav.hasClass('in');
+        var isHidden = mobileSize && !nav.hasClass('in');
         nav.attr('aria-hidden', isHidden ? 'true' : 'false');
         nav.find('a').each(function (i, anchor) {
             $(anchor).attr('tabIndex', isHidden ? '-1' : '0');
         });
     }
-    var matcher = window.matchMedia('(max-width: 979px)');
-    var navCanHide = matcher.matches;
+    navbarButton.click(function () {
+        var pressed = navbarButton.attr('aria-expanded');
+        navbarButton.attr('aria-expanded', pressed === 'true' ? 'false' : 'true');
+        setTimeout(setAriaHiddenOnNav);
+    });
+
     matcher.addListener(function () {
-        navCanHide = matcher.matches;
+        mobileSize = matcher.matches;
         setAriaHiddenOnNav();
+        setNavPlacementInDom();
     });
     setAriaHiddenOnNav();
+    setNavPlacementInDom();
 })(jQuery);

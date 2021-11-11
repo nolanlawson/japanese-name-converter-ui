@@ -23,3 +23,8 @@ a {
 a:hover {
     color: #00375f;
 }
+
+/* disable transition animation, it applies on focus outline which is bizarre */
+body > .navbar .brand {
+    transition: none;
+}

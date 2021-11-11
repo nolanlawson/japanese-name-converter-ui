@@ -83,3 +83,9 @@ background-image: url('../images/lantern-2000w.jpg');
     }
 
 }
+
+@media (max-width: 1239px) and (min-width: 768px) {
+    button#btn-convert {
+        margin-top: 10px;
+    }
+}
