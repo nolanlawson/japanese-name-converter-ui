@@ -44,3 +44,18 @@ body > .navbar .brand {
 *:focus:not(:focus-visible) {
     outline: none;
 }
+
+/* Landscape phones and down */
+@media (max-width: 480px) {
+    #btn-convert {
+        margin-top: 10px;
+    }
+
+    .navbar .brand {
+        font-size: 18px;
+    }
+
+    .jumbotron h1 {
+        font-size: 38px;
+    }
+}
