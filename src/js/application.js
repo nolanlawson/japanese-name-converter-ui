@@ -4,7 +4,7 @@
     
     "use strict";
     
-    var serverUrl = 'https://hoee1jqqr7.execute-api.us-west-2.amazonaws.com/JNameConverter';
+    var serverUrl = '/jnameconverter-server/convert';
     
     var $btnConvert = $('#btn-convert');
     var $inputConvert = $('#input-convert');
