@@ -3,7 +3,8 @@
   "version": "1.0.0",
   "description": "Japanese Name Converter UI ==========================",
   "scripts": {
-    "build": "rimraf dist && parcel build ./src/index.html"
+    "//": "Parcel moves all script/link/img references to an absolute path, doesn't work when hosted at a sub-path",
+    "build": "rimraf dist && parcel build ./src/index.html && replace '(href|src)=\"/' '$1=\"./' dist/index.html"
   },
   "repository": {
     "type": "git",
@@ -21,6 +22,7 @@
   },
   "dependencies": {
     "parcel": "^2.0.1",
+    "replace": "^1.2.1",
     "rimraf": "^3.0.2"
   }
 }
