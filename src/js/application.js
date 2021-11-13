@@ -97,23 +97,28 @@
         });
         $btnConvert.addClass('disabled').click(onFormSubmit);
     }
-    
+
+    var urlInternal = $('a:urlInternal');
+    var aTitle = $('a[title]');
+
     function setUpLinks() {
-        
         // tooltip links
-        $('a[title]').each(function(){
+        aTitle.each(function(){
             $(this).tooltip();
         }).click(function(e){
             e.preventDefault();
         });
         
         // internal links
-        $('a:urlInternal').click(function(e) {
+        urlInternal.click(function(e) {
             e.preventDefault(); // no page reload
             $.bbq.pushState({}, 2);
         });
     }
-    
+
+    var navLi = $('.nav li');
+    var tabContent = $('.tab-content');
+
     function hashchange() {
         var tabname = ($.param.fragment() || 'home').replace(/\?[^?]*$/,'') || 'home';
         
@@ -126,11 +131,11 @@
         var tabLinkSelector = 'a[href="#' + tabname + '"]';
         var tabContentSelector = '.tab-' + tabname;
         
-        $('.nav li').removeClass('active')
+        navLi.removeClass('active')
             .find(tabLinkSelector)
             .parent().addClass('active');
         
-        $('.tab-content').hide().filter(tabContentSelector).show();
+        tabContent.hide().filter(tabContentSelector).show();
         
         convertName(params);
     }
