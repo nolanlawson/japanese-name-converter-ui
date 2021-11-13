@@ -12,7 +12,10 @@
     var $divInstructions = $('#div-instructions');
     var $ajaxLoading = $('.ajax-loading');
     var $ajaxLoaded = $('.ajax-loaded');
-        
+
+    function trim(str) {
+        return str && str.replace(/^\s+/, '').replace(/\s+$/, '');
+    }
     
     function showConvertedName(result, q) {
         
@@ -20,7 +23,7 @@
         
         $divOutput.show().empty().
             append(
-                $('<h4></h4>').text('The name "' + q + '" in Japanese is ')).
+                $('<h4></h4>').text('The name "' + trim(q) + '" in Japanese is ')).
             append(
                 $('<h3></h3>').css({'text-align' : 'center'}).
                 append(
