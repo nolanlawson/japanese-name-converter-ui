@@ -3,7 +3,7 @@
   "version": "1.0.0",
   "description": "Japanese Name Converter UI ==========================",
   "scripts": {
-    "build": "parcel build ./src/index.html"
+    "build": "rimraf dist && parcel build ./src/index.html"
   },
   "repository": {
     "type": "git",
@@ -15,11 +15,12 @@
     "url": "https://github.com/nolanlawson/japanese-name-converter-ui/issues"
   },
   "homepage": "https://github.com/nolanlawson/japanese-name-converter-ui#readme",
-  "devDependencies": {
-    "parcel": "^2.0.1"
-  },
   "volta": {
     "node": "16.13.0",
     "npm": "7.24.2"
+  },
+  "dependencies": {
+    "parcel": "^2.0.1",
+    "rimraf": "^3.0.2"
   }
 }
