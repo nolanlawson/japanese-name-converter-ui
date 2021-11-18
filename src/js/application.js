@@ -188,4 +188,7 @@
     });
     setAriaHiddenOnNav();
     setNavPlacementInDom();
+
+    // asynchronously load the google font
+    $('link[media="only x"]').attr('media', '');
 })(jQuery);
