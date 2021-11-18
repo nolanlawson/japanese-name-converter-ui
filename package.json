@@ -1,6 +1,6 @@
 {
   "name": "japanese-name-converter-ui",
-  "version": "1.0.0",
+  "version": "1.0.8",
   "description": "Japanese Name Converter UI ==========================",
   "scripts": {
     "build": "run-s build:clean build:parcel build:purgecss build:inline",
