@@ -3,8 +3,13 @@
   "version": "1.0.0",
   "description": "Japanese Name Converter UI ==========================",
   "scripts": {
+    "build": "run-s build:clean build:parcel build:purgecss build:inline",
+    "build:clean": "rimraf ./dist",
     "//": "Parcel moves all script/link/img references to an absolute path, doesn't work when hosted at a sub-path",
-    "build": "rimraf dist && parcel build ./src/index.html && replace '(href|src)=\"/' '$1=\"./' dist/index.html"
+    "build:parcel": "parcel build ./src/index.html && replace '(href|src)=\"/' '$1=\"./' ./dist/index.html",
+    "build:purgecss": "purgecss --css ./dist/*.css --content ./dist/index.html --output ./dist -s btn-inverse -s disabled -s active -s btn -s btn-primary -s tooltip -s fade -s top -s in -s tooltip-inner",
+    "build:inline": "inline-assets --pattern .*.css ./dist/index.html ./dist/index.html && rimraf ./dist/*.css",
+    "prepare": "npm run build"
   },
   "repository": {
     "type": "git",
@@ -21,7 +26,10 @@
     "npm": "7.24.2"
   },
   "dependencies": {
+    "inline-assets": "^1.4.8",
+    "npm-run-all": "^4.1.5",
     "parcel": "^2.0.1",
+    "purgecss": "^4.0.3",
     "replace": "^1.2.1",
     "rimraf": "^3.0.2"
   }

@@ -23,9 +23,9 @@
         
         $divOutput.show().empty().
             append(
-                $('<h4></h4>').text('The name "' + trim(q) + '" in Japanese is ')).
+                $('<h4></h4>').attr('role', 'presentation').text('The name "' + trim(q) + '" in Japanese is ')).
             append(
-                $('<h3></h3>').css({'text-align' : 'center'}).
+                $('<h3></h3>').attr('role', 'presentation').css({'text-align' : 'center'}).
                 append(
                     $('<span></span>').text(result.katakana)).
                 append($('<span></span>').addClass('muted').text(' (' + result.roomaji +')')));

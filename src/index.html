@@ -5,11 +5,11 @@
     <meta name="Description" content="Your name in Japanese katakana. To get started, enter your name in English.">
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
     <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-    <link href="lib/bootstrap/css/bootstrap.min.css" rel="stylesheet" media="screen"/>
+    <link href="lib/bootstrap/css/bootstrap.min.css" rel="stylesheet"/>
     <link href="css/application.css" rel="stylesheet"/>
-    <link href="lib/bootstrap/css/bootstrap-responsive.min.css" rel="stylesheet" media="screen"/>
-    <link href="lib/bootstrap/css/docs.css" rel="stylesheet" media="screen"/>
-    <link href='https://fonts.googleapis.com/css?family=Joti+One' rel='stylesheet' type='text/css'/>
+    <link href="lib/bootstrap/css/bootstrap-responsive.min.css" rel="stylesheet"/>
+    <link href="lib/bootstrap/css/docs.css" rel="stylesheet"/>
+    <link href="https://fonts.googleapis.com/css?family=Joti+One" rel="stylesheet"/>
     <link rel="shortcut icon" href="favicon.ico"/>
     <style>
         .flag {
@@ -72,6 +72,25 @@
             .jumbotron h1 {
                 font-size: 38px;
             }
+        }
+
+        /* Copied from Bootstrap so purgecss doesn't remove it */
+        h3, h4 {
+            text-rendering: optimizelegibility;
+            color: inherit;
+            font-family: inherit;
+            font-weight: 700;
+            line-height: 20px;
+            margin: 10px 0;
+        }
+
+        h3 {
+            line-height: 40px;
+            font-size: 24.5px;
+        }
+
+        h4 {
+            font-size: 17.5px;
         }
     </style>
     <script>
@@ -144,7 +163,7 @@
           </div><!--/.well -->
         </div><!--/span-->
         <div class="span9 tab-content tab-home" style="display:none;">
-		  <div id="div-output" class="well well-large" style="display:none;">
+		  <div id="div-output" class="well well-large" style="display:none;" role="alert" aria-live="polite">
 		  </div>
           <div id="div-instructions" class="well well-large">
 
