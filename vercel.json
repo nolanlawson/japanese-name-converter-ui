@@ -27,7 +27,7 @@
         },
         {
           "key": "content-security-policy",
-          "value": "default-src 'self';script-src 'self' 'sha256-9WI0TbcaU+S0P4Kq0k5vSzB5HthueICom1VF11aYqrU=' https://fathom.nolanlawson.com;worker-src 'self';style-src 'self' 'unsafe-inline' https://fonts.googleapis.com;img-src 'self' data: https://fathom.nolanlawson.com;media-src 'self';connect-src 'self';frame-src 'none';frame-ancestors 'none';object-src 'none';manifest-src 'self';form-action 'self';base-uri 'self';font-src 'self' https://fonts.gstatic.com;"
+          "value": "default-src 'self';script-src 'self' 'sha256-9WI0TbcaU+S0P4Kq0k5vSzB5HthueICom1VF11aYqrU=' https://fathom.nolanlawson.com;worker-src 'self';style-src 'self' 'unsafe-inline' https://fonts.googleapis.com;img-src 'self' data: https://fathom.nolanlawson.com;media-src 'self';connect-src 'self' https://hoee1jqqr7.execute-api.us-west-2.amazonaws.com;frame-src 'none';frame-ancestors 'none';object-src 'none';manifest-src 'self';form-action 'self';base-uri 'self';font-src 'self' https://fonts.gstatic.com;"
         },
         {
           "key": "referrer-policy",
