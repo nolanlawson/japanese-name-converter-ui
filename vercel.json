@@ -1,0 +1,83 @@
+{
+  "github": {
+    "silent": true
+  },
+  "redirects": [
+    {
+      "source": "/index.html",
+      "destination": "/"
+    }
+  ],
+  "headers": [
+    {
+      "source": "/(.*)\\.(js|css|map|png|jpe?g|ico|gif)",
+      "headers": [
+        {
+          "key": "cache-control",
+          "value": "public,max-age=31536000,immutable"
+        },
+        {
+          "key": "x-nolan-cache-forever",
+          "value": "yes"
+        },
+        {
+          "key": "x-nolan-type",
+          "value": "immutable"
+        }
+      ]
+    },
+    {
+      "source": "/",
+      "headers": [
+        {
+          "key": "cache-control",
+          "value": "public,max-age=14400"
+        },
+        {
+          "key": "content-security-policy",
+          "value": "default-src 'self';script-src 'self' https://fathom.nolanlawson.com;worker-src;style-src 'self' 'unsafe-inline' https://fonts.googleapis.com;img-src 'self' data: https://fathom.nolanlawson.com;media-src 'self';connect-src 'self';frame-src 'none';frame-ancestors 'none';object-src 'none';manifest-src 'self';form-action 'self';base-uri 'self';font-src 'self' https://fonts.gstatic.com;"
+        },
+        {
+          "key": "referrer-policy",
+          "value": "strict-origin-when-cross-origin"
+        },
+        {
+          "key": "strict-transport-security",
+          "value": "max-age=15552000; includeSubDomains"
+        },
+        {
+          "key": "permissions-policy",
+          "value": "sync-xhr=(),document-domain=()"
+        },
+        {
+          "key": "x-content-type-options",
+          "value": "nosniff"
+        },
+        {
+          "key": "x-download-options",
+          "value": "noopen"
+        },
+        {
+          "key": "x-frame-options",
+          "value": "DENY"
+        },
+        {
+          "key": "x-xss-protection",
+          "value": "1; mode=block"
+        },
+        {
+          "key": "cross-origin-opener-policy",
+          "value": "same-origin"
+        },
+        {
+          "key": "x-nolan-csp",
+          "value": "yes"
+        },
+        {
+          "key": "x-nolan-type",
+          "value": "csp"
+        }
+      ]
+    }
+  ]
+}
