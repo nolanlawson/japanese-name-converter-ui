@@ -42,27 +42,24 @@
             if ($inputConvert.val() !== params.q) {
                 $inputConvert.val(params.q);
             }
-            
-            $.ajax({
-                url      : serverUrl,
-                dataType : 'json',
-                data     : params
-                
-            }).
-            done(function(result){
-                $ajaxLoaded.show();
-                $ajaxLoading.hide();
-                $btnConvert.removeClass('disabled');
-                if (!result.error) {
-                    showConvertedName(result, params.q);
-                }
-            }).
-            fail(function() {
+
+            fetch(serverUrl + '?' + param(params))
+              .then(function (resp) {
+                  return resp.json()
+              })
+              .then(function (result) {
+                  $ajaxLoaded.show();
+                  $ajaxLoading.hide();
+                  $btnConvert.removeClass('disabled');
+                  if (!result.error) {
+                      showConvertedName(result, params.q);
+                  }
+              }).catch(function () {
                 console.log("failed to reach " + serverUrl);
                 $ajaxLoaded.show();
                 $ajaxLoading.hide();
                 $btnConvert.removeClass('disabled');
-            });
+            })
         } else {
             // clear the converted name
             $divOutput.hide();
@@ -80,7 +77,7 @@
             
             var hash = document.location.hash;
             hash = hash.replace(/\?[^?]*$/,'');
-            hash = hash + '?' + $.param({q : q});
+            hash = hash + '?' + param({q : q});
             document.location.hash = hash;
         }
     }
@@ -101,7 +98,6 @@
         $btnConvert.addClass('disabled').click(onFormSubmit);
     }
 
-    var urlInternal = $('a:urlInternal');
     var aTitle = $('a[title]');
 
     function setUpLinks() {
@@ -111,26 +107,34 @@
         }).click(function(e){
             e.preventDefault();
         });
-        
-        // internal links
-        urlInternal.click(function(e) {
-            e.preventDefault(); // no page reload
-            $.bbq.pushState({}, 2);
-        });
     }
 
     var navLi = $('.nav li');
     var tabContent = $('.tab-content');
 
+    function param(obj) {
+        var params = new URLSearchParams(obj);
+        return params.toString()
+    }
+
+    function deparam(str) {
+        var params = new URLSearchParams(str);
+        var res = {};
+        params.forEach(function (value, key) {
+            res[key] = value;
+        });
+        return res;
+    }
+
     function hashchange() {
-        var tabname = ($.param.fragment() || 'home').replace(/\?[^?]*$/,'') || 'home';
+        var fragment = location.hash.replace(/^#/, '')
+        var tabname = (fragment || 'home').replace(/\?[^?]*$/,'').replace(/^\//, '') || 'home';
         
-        var params = $.param.fragment() && $.param.fragment().match(/\?([^?]*)$/);
+        var params = fragment && fragment.match(/\?([^?]*)$/);
         if (params) {
-            params = $.deparam(params[1]);
+            params = deparam(params[1]);
         }
-        
-        
+
         var tabLinkSelector = 'a[href="#' + tabname + '"]';
         var tabContentSelector = '.tab-' + tabname;
         
@@ -142,8 +146,9 @@
         
         convertName(params);
     }
-    
-    $(window).hashchange(hashchange).hashchange();
+
+    window.addEventListener('hashchange', hashchange)
+    hashchange()
     
     setUpLinks();
     setUpConvertButton();
