@@ -11,7 +11,7 @@ module.exports = async (req, res) => {
 
     res.setHeader('Content-Type', 'application/json; charset=utf-8')
     res.setHeader('Cache-Control', 'public,max-age=0,s-maxage=86400')
-    res.status(200)
+    res.status(resp.status)
     res.send(text)
   } catch (error) {
     res.status(500);
