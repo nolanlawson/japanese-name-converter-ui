@@ -10,7 +10,7 @@
     "build:purgecss": "purgecss --css ./dist/*.css --content ./dist/index.html --output ./dist -s btn-inverse -s disabled -s active -s btn -s btn-primary -s tooltip -s fade -s top -s in -s tooltip-inner",
     "build:inline": "inline-assets --pattern .*.css ./dist/index.html ./dist/index.html && rimraf ./dist/*.css",
     "prepare": "npm run build",
-    "dev": "parcel watch ./src/index.html"
+    "dev": "parcel serve ./src/index.html"
   },
   "repository": {
     "type": "git",
