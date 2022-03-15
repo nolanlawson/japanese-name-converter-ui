@@ -3,8 +3,8 @@
 (function($) {
     
     "use strict";
-    
-    var serverUrl = '/api/convert';
+
+    var serverUrl = 'https://jnameconverterapi.nolanlawson.com/JNameConverter';
     
     var $btnConvert = $('#btn-convert');
     var $inputConvert = $('#input-convert');
