@@ -1,3 +1,6 @@
+import '../lib/jquery/jquery-3.6.3.js'
+import '../lib/bootstrap/js/bootstrap.min.js'
+
 /*jshint bitwise:true, curly:true, eqeqeq:true, forin:true, noarg:true, noempty:true, nonew:true, undef:true, strict:true, browser:true */
 /*global console jQuery*/
 (function($) {
