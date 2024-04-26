@@ -5,6 +5,13 @@ Web application frontend to the Japanese Name Converter java backend.
 
 Live demo available [here](http://apps.nolanlawson.com/japanese-name-converter/).
 
+Build and dev
+---
+
+    npm run build
+
+    npm run dev
+
 Related projects
 ---------------
 

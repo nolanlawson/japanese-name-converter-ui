@@ -236,8 +236,8 @@ only screen and (     -o-min-device-pixel-ratio: 2/1) {
   display: inline-block;
   padding: 5px 8px;
   line-height: 1;
-  *display: inline;
-  *zoom: 1;
+  /* Removed starhack: *display: inline */;
+  /* Removed starhack: *zoom: 1 */;
 }
 
 /* Subhead (other pages)
@@ -570,7 +570,7 @@ h2 + .row {
   position: relative;
   margin: 15px 0;
   padding: 39px 19px 14px;
-  *padding-top: 19px;
+  /* Removed starhack: *padding-top: 19px */;
   background-color: #fff;
   border: 1px solid #ddd;
   -webkit-border-radius: 4px;
@@ -698,7 +698,7 @@ form.bs-docs-example {
   display: block;
   position: static;
   margin-bottom: 5px;
-  *width: 180px;
+  /* Removed starhack: *width: 180px */;
 }
 
 
