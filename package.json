@@ -1,7 +1,7 @@
 {
   "name": "japanese-name-converter-ui",
   "version": "1.0.10",
-  "description": "Japanese Name Converter UI ==========================",
+  "description": "Japanese Name Converter UI",
   "scripts": {
     "build": "run-s build:clean build:parcel build:purgecss build:inline",
     "build:clean": "rimraf ./dist",
@@ -22,16 +22,12 @@
     "url": "https://github.com/nolanlawson/japanese-name-converter-ui/issues"
   },
   "homepage": "https://github.com/nolanlawson/japanese-name-converter-ui#readme",
-  "volta": {
-    "node": "16.14.0",
-    "npm": "8.5.4"
-  },
   "devDependencies": {
-    "inline-assets": "^1.4.8",
+    "inline-assets": "^1.4.9",
     "npm-run-all": "^4.1.5",
-    "parcel": "^2.0.1",
-    "purgecss": "^4.0.3",
-    "replace": "^1.2.1",
-    "rimraf": "^3.0.2"
+    "parcel": "^2.12.0",
+    "purgecss": "^6.0.0",
+    "replace": "^1.2.2",
+    "rimraf": "^5.0.5"
   }
 }
