@@ -98,3 +98,8 @@ background-image: url('../images/lantern-2000w.jpg');
     backdrop-filter: blur(3px) saturate(110%) brightness(90%);
     pointer-events: none;
 }
+
+.fat-arrow {
+    font-size: 1.3rem;
+
+}
