@@ -3,12 +3,13 @@
   "version": "1.0.10",
   "description": "Japanese Name Converter UI",
   "scripts": {
-    "build": "run-s build:clean build:parcel build:purgecss build:inline",
+    "build": "run-s build:clean build:parcel build:purgecss build:inline build:copy",
     "build:clean": "rimraf ./dist",
     "//": "Parcel moves all script/link/img references to an absolute path, doesn't work when hosted at a sub-path",
     "build:parcel": "parcel build ./src/index.html && replace '(href|src)=\"/' '$1=\"./' ./dist/index.html",
     "build:purgecss": "purgecss --css ./dist/*.css --content ./dist/index.html --output ./dist -s btn-inverse -s disabled -s active -s btn -s btn-primary -s tooltip -s fade -s top -s in -s tooltip-inner",
     "build:inline": "inline-assets --pattern .*.css ./dist/index.html ./dist/index.html && rimraf ./dist/*.css",
+    "build:copy": "cp _headers _redirects ./dist/",
     "prepare": "npm run build",
     "dev": "parcel serve ./src/index.html"
   },
